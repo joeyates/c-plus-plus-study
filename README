@@ -1,0 +1,8 @@
+These are code examples to accompany my posts (http://titusd.co.uk) about C++.
+
+Where possible, the code compiles under GCC and Microsoft's cl.exe compiler
+
+= Compilation
+
+* Windows:
+  $ nmake /f MAKEFILE.mak

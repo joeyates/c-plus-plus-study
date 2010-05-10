@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdio.h>
 #include <sstream>
 using namespace std;
 
@@ -12,7 +13,7 @@ void indent(int depth) {
 template <class T>
 void dump_memory(const T * p, size_t items, const char * title, int depth) {
   indent(depth);
-  printf("%08x -> %s\n", p, title);
+  printf("%08x -> %s\n", (unsigned int) p, title);
   // Make a format string that prints hex with correct number of leading zeroes
   stringstream sstr;
   sstr << "%0" << sizeof(T) * 2 << "x ";

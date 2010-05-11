@@ -1,34 +1,38 @@
 An empty class:
-  bfd3dfdf -> instance (1 byte):
+  bfbdeb5f -> instance (1 byte):
     00 
 
 A class with an int member:
-  bfd3dfd8 -> instance (4 bytes):
-    eb a8 04 08 
+  bfbdeb58 -> instance (4 bytes):
+    bb ac 04 08 
 
 A class with char and int members:
-  bfd3dfcc -> instance (8 bytes):
-    e8 df d3 bf a5 a4 eb 00 
+  bfbdeb4c -> instance (8 bytes):
+    68 eb bd bf a5 c4 40 00 
 
 A class with int and char members:
-  bfd3dfc4 -> instance (8 bytes):
-    f4 0f fe 00 e0 a8 04 08 
+  bfbdeb44 -> instance (8 bytes):
+    f4 2f 53 00 b0 ac 04 08 
+
+A class with a single member function:
+  bfbdeb5e -> instance (1 byte):
+    53 
 
 A class with a virtual member function:
-  bfd3dfd4 -> instance (4 bytes):
-    f8 aa 04 08 
-    vtbl (0804aaf8 - 0804aafb) 1 entry:
-      0804aaf8 -> fptr 0:
-        08048cec 
-        08048cec -> implementation (first 16 bytes):
-          55 89 e5 5d c3 90 55 89 e5 8b 45 08 c7 00 e8 aa 
+  bfbdeb54 -> instance (4 bytes):
+    f0 ae 04 08 
+    vtbl (0804aef0 - 0804aef3) 1 entry:
+      0804aef0 -> fptr 0:
+        08048d08 
+        08048d08 -> implementation (first 16 bytes):
+          55 89 e5 5d c3 90 55 89 e5 8b 45 08 c7 00 e0 ae 
 
 A subclass of an abstract class:
-  bfd3dfb8 -> instance (12 bytes):
-    d8 aa 04 08 ff ff ff ff f1 f1 f1 f1 
-    vtbl (0804aad8 - 0804aadb) 1 entry:
-      0804aad8 -> fptr 0:
-        08048d30 
-        08048d30 -> implementation (first 16 bytes):
+  bfbdeb38 -> instance (12 bytes):
+    d0 ae 04 08 ff ff ff ff f1 f1 f1 f1 
+    vtbl (0804aed0 - 0804aed3) 1 entry:
+      0804aed0 -> fptr 0:
+        08048d4c 
+        08048d4c -> implementation (first 16 bytes):
           55 89 e5 b8 33 33 33 33 5d c3 55 89 e5 8b 45 08 
 

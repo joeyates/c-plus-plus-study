@@ -81,6 +81,10 @@ class D {
   char ch;
 };
 
+class NonVirtual {
+  void f() {}
+};
+
 class E {
   virtual void f() {}
 };
@@ -111,6 +115,8 @@ int main(int argc, char* argv[])
   dump_instance("A class with char and int members:", c);
   D d;
   dump_instance("A class with int and char members:", d);
+  NonVirtual nv;
+  dump_instance("A class with a single member function:", nv);
   E e;
   dump_instance("A class with a virtual member function:", e, 1); // We supply the number of virtual methods
   F1 f1;

@@ -29,16 +29,14 @@ void dump_memory(const T * p, size_t items, const char * title, int depth) {
 // Pretend all pointers are to int to reduce number of casts
 template<class T> 
 void dump_vtable(const T& t, int virtuals) {
-  int * instance = (int *) &t;
   // In memory, the first bytes of the instance are occupied by the vtable
-  int * vtable = (int *) &instance;
-  int * __vptr = (int *) *vtable;
+  int * vtbl = (int *) &t;
   int vtable_size = virtuals * sizeof(int);
   indent(2);
-  printf("vtbl (%08x - %08x)", *__vptr, *__vptr + vtable_size - 1);
+  printf("vtbl (%08x - %08x)", *vtbl, *vtbl + vtable_size - 1);
   printf(" %d entr%s:\n", virtuals, ((virtuals == 1) ? "y" : "ies"));
   for(int i = 0; i < virtuals; ++i) {
-    int * fptr = ((int **) __vptr)[i];
+    int * fptr = ((int **) vtbl)[i];
     stringstream sstr;
     sstr << "fptr " << i << ":";
     dump_memory(fptr, 1, sstr.str().c_str(), 3);

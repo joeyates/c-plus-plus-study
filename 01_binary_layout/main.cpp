@@ -78,7 +78,7 @@ private:
 
 class C {
 public:
-  C(): ch(0xaa), i(0xbbbbbbbb) {};
+  C(): ch(0xa), i(0xbbbbbbbb) {};
 private:
   char ch;
   int i;
@@ -86,7 +86,7 @@ private:
 
 class D {
 public:
-  D(): i(0xbbbbbbbb), ch(0xaa) {};
+  D(): i(0xbbbbbbbb), ch(0xa) {};
 private:
   int i;
   char ch;

@@ -67,16 +67,27 @@ void dump_instance(const char * title, const T& t, int virtuals = 0) {
 class A {
 };
 
+// Initialize member variables with easy-to-spot data to make dumps clearer
+
 class B {
+public:
+  B(): i(0xbbbbbbbb) {};
+private:
   int i;
 };
 
 class C {
+public:
+  C(): ch(0xaa), i(0xbbbbbbbb) {};
+private:
   char ch;
   int i;
 };
 
 class D {
+public:
+  D(): i(0xbbbbbbbb), ch(0xaa) {};
+private:
   int i;
   char ch;
 };
@@ -91,7 +102,7 @@ class E {
 
 class F {
 public:
-  F() : fdata(0xffffffff) {}; // Initialize with easy-to-spot data to make dumps clearer
+  F() : fdata(0xffffffff) {};
   virtual int f(void) = 0;
 private:
   int fdata;
